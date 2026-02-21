@@ -19,19 +19,16 @@
   </div>
 
   <script>
-    // Grab the hash just like your previous script
     const hash = window.location.hash;
     const d1 = '#red@';
     
     if (hash.startsWith(d1)) {
       const urlPart = hash.split(d1)[1];
       if (urlPart) {
-        // Decode and set the button's href, but DO NOT auto-redirect
         const destination = `https://${decodeURIComponent(urlPart)}`;
         document.getElementById('checkout-btn').href = destination;
       }
     } else {
-      // Fallback if no valid hash is found
       document.querySelector('.card').innerHTML = '<h2>Error</h2><p>Invalid checkout link.</p>';
     }
   </script>
